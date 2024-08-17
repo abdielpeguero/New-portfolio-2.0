@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event listeners for each nav item
     navHome.addEventListener('click', function(event) {
         event.preventDefault(); // Prevent default anchor behavior
-        navigateToPage('home.html');
+        navigateToPage('index.html');
     });
 
     navProjects.addEventListener('click', function(event) {
