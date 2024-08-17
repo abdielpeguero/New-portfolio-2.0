@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add a click event listener for AP Logo
     apLogo.addEventListener('click', function(event) {
         event.preventDefault(); //Prevent default anchor behavior
-        navigateToPage('home.html');
+        navigateToPage('index.html');
     });
 
     //function to navigate to homepage
