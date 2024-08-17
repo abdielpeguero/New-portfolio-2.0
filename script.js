@@ -130,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
 // Get the scroll up arrow element
 const scrollUpArrow = document.querySelector('.scroll_up_arrow_container');
 
@@ -158,5 +157,3 @@ scrollDownArrow.addEventListener('click', function(event) {
         behavior: 'smooth'
     });
 });
-
-
