@@ -155,6 +155,16 @@ a {
     cursor: default;
 }
 
+.body_3_med {
+    color: var(--text-primary);
+    font-size: 20px;
+    line-height: 32px;
+    font-family: inter;
+    font-weight: 500;
+    margin: 0;
+    cursor: default;
+}
+
 .body_2_med {
     color: var(--text-primary); 
     font-size: 16px;
@@ -232,6 +242,11 @@ strong {
     cursor: default;
 }
 
+/** Favicon properties */
+
+.favicon_icon {
+    box-shadow: #000;
+}
 
 
 /**preloader */
@@ -490,9 +505,9 @@ strong {
     display: flex;
     position: fixed;
     margin: 0;
-    top: 90%;
-    right: 10%;
-    padding: 16px;
+    top: 84%;
+    right: 4%;
+    padding: 12px;
     justify-content: center;
     align-items: center;
     background: linear-gradient(180deg, rgba(246, 246, 246, 0.60) 0%, rgba(255, 255, 255, 0.60) 100%);
@@ -506,6 +521,10 @@ strong {
 
 .scroll_up_arrow_container:hover {
     scale: 1.1;
+}
+
+.scroll_up_arrow_icon {
+    width: 24px;
 }
 
 
@@ -1267,6 +1286,8 @@ strong {
 .brands_logo {
     position: absolute;
     left: 100%;
+    gap: 4px;
+    padding: 0 12px;
     animation-name: scrollleft;
     animation-duration: 30s;
     animation-timing-function: linear;
@@ -1322,6 +1343,7 @@ strong {
 .testim-1 {
     display: flex;
     flex-direction: row;
+
     gap: 5em;
 }
 
@@ -1797,10 +1819,16 @@ footer {
 
     .testim-1 {
         flex-direction: column;
+        max-width: 844px;
     }
     
     .testim-2 {
         flex-direction: column;
+        max-width: 844px;
+    }
+
+    .container-about {
+        padding: 232px 10%;
     }
 }
 
@@ -1819,10 +1847,6 @@ footer {
         max-width: 736px;
     }
 
-    .container-about {
-        padding: 200px 10%;
-    }
-
 }
 
 @media (max-width:796px) {
@@ -1833,7 +1857,7 @@ footer {
     }
 
     .project_hero {
-        padding: 112px 10%;
+        padding: 264px 10%;
     }
 
     .testimonies {
@@ -2004,6 +2028,10 @@ footer {
     .hero {
         padding: 232px 32px 112px 32px;
     }
+
+    .container-about {
+        padding: 136px 10%;
+    }
 }
 
 @media (max-width:428px) {
@@ -2021,13 +2049,21 @@ footer {
         padding: 112px 16px;
     }
 
-    .container-about {
-        padding: 136\px 10%;
+    .project_hero {
+        padding: 176px 10%;
     }
 
+    .brands_logo {
+        position: static;
+    }
+
+    .display_2_med {
+        font-size: 32px;
+        line-height: 40px;
+    }
 }
 
-@media (max-width:374px) {
+@media (max-width:375px) {
 
     .hero {
         padding: 176px 16px 112px 16px;
@@ -2084,5 +2120,13 @@ footer {
 
     .miclaro_project_cover_bg {
         min-width: 288px;
+    }
+
+    .scroll_up_arrow_container {
+        padding: 8px;
+    }
+
+    .scroll_up_arrow_icon {
+        width: 20px;
     }
 }
