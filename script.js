@@ -30,17 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Check if the hero animation has been played before
     if (heroAnimationPlayed) {
 
-        const navbar = document.querySelector('.navbar_master_container');
-    
-        // GSAP Animation: slide from top and fade in
-        gsap.from(navbar, {
-            duration: 1,       // Animation duration
-            y: -100,           // Start off-screen above the viewport
-            opacity: 0,        // Start fully transparent
-            ease: "power2.out" // Easing function
-        });
-        
-
 
         // Timeline for the hero section
         const heroTimeline = gsap.timeline({ ScrollReveal: {
@@ -130,19 +119,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Get the scroll up arrow element
-const scrollUpArrow = document.querySelector('.scroll_up_arrow_container');
 
-// Add a click event listener to the scroll up arrow
-scrollUpArrow.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent the default anchor behavior
 
-    // Smooth scroll to the top
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
 
 // Get the scroll down arrow element
 const scrollDownArrow = document.querySelector('.scroll_down_arrow_container');
@@ -151,9 +129,60 @@ const scrollDownArrow = document.querySelector('.scroll_down_arrow_container');
 scrollDownArrow.addEventListener('click', function(event) {
     event.preventDefault(); // Prevent the default anchor behavior
 
+    // Determine scroll percentage based on screen width
+    let scrollPercentage = window.innerWidth <= 768 ? 0.34 : 0.19; // 33.8% for mobile, 23% for desktop
+
     // Smooth scroll to my project section
     window.scrollTo({
-        top: '1800',
+        top: document.body.scrollHeight * scrollPercentage,
         behavior: 'smooth'
+    });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Get the scroll up arrow element
+    const scrollUpArrow = document.querySelector('.scroll_up_arrow_container');
+
+    let isScrolling;
+
+    // Scroll up arrow visibility logic
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        const screenHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        // Determine the visibility threshold based on screen width
+        const visibilityThreshold = window.innerWidth <= 768 ? 0.3 : 0.5; // 30% for mobile, 50% for desktop
+
+        // Check if the user has scrolled more than the threshold
+        if (scrollPosition > screenHeight * visibilityThreshold) {
+            scrollUpArrow.style.display = 'flex'; // Show the arrow
+        } else {
+            scrollUpArrow.style.display = 'none'; // Hide the arrow
+        }
+
+        // Clear the timeout if it's already set
+        clearTimeout(isScrolling);
+
+        // Hide the arrow while scrolling
+        scrollUpArrow.style.opacity = '0'; // Fade out the arrow
+
+        // Set a timeout to show the arrow again when scrolling stops
+        isScrolling = setTimeout(function() {
+            scrollUpArrow.style.opacity = '1'; // Fade in the arrow
+        }, 150); // Adjust this value as needed (in milliseconds)
+    });
+
+    // Add a click event listener to the scroll up arrow
+    scrollUpArrow.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+
+        // Smooth scroll to the top
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 });
