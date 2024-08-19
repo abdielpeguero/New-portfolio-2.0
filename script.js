@@ -141,48 +141,51 @@ scrollDownArrow.addEventListener('click', function(event) {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
 
-    // Get the scroll up arrow element
-    const scrollUpArrow = document.querySelector('.scroll_up_arrow_container');
 
-    let isScrolling;
+// // Scroll up component
+// document.addEventListener('DOMContentLoaded', function() {
 
-    // Scroll up arrow visibility logic
-    window.addEventListener('scroll', function() {
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-        const screenHeight = window.innerHeight || document.documentElement.clientHeight;
+//     // Get the scroll up arrow element
+//     const scrollUpArrow = document.querySelector('.scroll_up_arrow_container');
 
-        // Determine the visibility threshold based on screen width
-        const visibilityThreshold = window.innerWidth <= 768 ? 0.3 : 0.5; // 30% for mobile, 50% for desktop
+//     let isScrolling;
 
-        // Check if the user has scrolled more than the threshold
-        if (scrollPosition > screenHeight * visibilityThreshold) {
-            scrollUpArrow.style.display = 'flex'; // Show the arrow
-        } else {
-            scrollUpArrow.style.display = 'none'; // Hide the arrow
-        }
+//     // Scroll up arrow visibility logic
+//     window.addEventListener('scroll', function() {
+//         const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+//         const screenHeight = window.innerHeight || document.documentElement.clientHeight;
 
-        // Clear the timeout if it's already set
-        clearTimeout(isScrolling);
+//         // Determine the visibility threshold based on screen width
+//         const visibilityThreshold = window.innerWidth <= 768 ? 0.3 : 0.5; // 30% for mobile, 50% for desktop
 
-        // Hide the arrow while scrolling
-        scrollUpArrow.style.opacity = '0'; // Fade out the arrow
+//         // Check if the user has scrolled more than the threshold
+//         if (scrollPosition > screenHeight * visibilityThreshold) {
+//             scrollUpArrow.style.display = 'flex'; // Show the arrow
+//         } else {
+//             scrollUpArrow.style.display = 'none'; // Hide the arrow
+//         }
 
-        // Set a timeout to show the arrow again when scrolling stops
-        isScrolling = setTimeout(function() {
-            scrollUpArrow.style.opacity = '1'; // Fade in the arrow
-        }, 150); // Adjust this value as needed (in milliseconds)
-    });
+//         // Clear the timeout if it's already set
+//         clearTimeout(isScrolling);
 
-    // Add a click event listener to the scroll up arrow
-    scrollUpArrow.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the default anchor behavior
+//         // Hide the arrow while scrolling
+//         scrollUpArrow.style.opacity = '0'; // Fade out the arrow
 
-        // Smooth scroll to the top
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-});
+//         // Set a timeout to show the arrow again when scrolling stops
+//         isScrolling = setTimeout(function() {
+//             scrollUpArrow.style.opacity = '1'; // Fade in the arrow
+//         }, 150); // Adjust this value as needed (in milliseconds)
+//     });
+
+//     // Add a click event listener to the scroll up arrow
+//     scrollUpArrow.addEventListener('click', function(event) {
+//         event.preventDefault(); // Prevent the default anchor behavior
+
+//         // Smooth scroll to the top
+//         window.scrollTo({
+//             top: 0,
+//             behavior: 'smooth'
+//         });
+//     });
+// });
