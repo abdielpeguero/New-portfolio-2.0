@@ -1485,10 +1485,15 @@ strong {
 }
 
 .about-me-details {
+    display: flex;
+    flex-direction: column;
     max-width: 724px;
+    height: 100%;
+    justify-content: space-between;
+    gap: 24px;
 }
 
-.about__explained {
+.about_explained {
     font-style: normal;
     font-size: clamp(1rem, 3vw, 1.20rem);
     font-weight: 300;
@@ -1496,7 +1501,20 @@ strong {
     max-width: 1080px;
     min-width: 628px;
     padding: 0;
-    margin: 0 0 1.5em;
+    margin: 0;
+    min-width: 250px;
+    gap: 24px;
+}
+
+.about_explained_med {
+    font-style: normal;
+    font-size: clamp(1rem, 3vw, 1.20rem);
+    font-weight: 400;
+    line-height: 150%; /*36px*/
+    max-width: 1080px;
+    min-width: 628px;
+    padding: 0;
+    margin: 0;
     min-width: 250px;
     gap: 24px;
 }
@@ -1723,7 +1741,15 @@ strong {
 
 .skill-general {
     display: flex;
+    width: 100%;
     flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+.skill-general_dual {
+    display: flex;
+    width: 100%;
     justify-content: space-between;
     gap: 48px;
 }
@@ -1736,7 +1762,8 @@ strong {
 
 .skills-container {
     display: flex;
-    gap: 56px;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .skill-column-1 {
@@ -1861,7 +1888,7 @@ footer {
     }
 
     .testimonies {
-        padding: 112px 12%;
+        padding: 112px 6%;
     }
 
     .project_cover_1_big {
@@ -2100,26 +2127,32 @@ footer {
 
     .momento_project_cover_bg {
         min-width: 288px;
+        border-radius: 24px;
     }
 
     .opret_project_cover_bg {
         min-width: 288px;
+        border-radius: 24px;
     }
 
     .qik_project_cover_bg {
         min-width: 288px;
+        border-radius: 24px;
     }
 
     .colapago_project_cover_bg {
         min-width: 288px;
+        border-radius: 24px;
     }
 
     .scribble_project_cover_bg {
         min-width: 288px;
+        border-radius: 24px;
     }
 
     .miclaro_project_cover_bg {
         min-width: 288px;
+        border-radius: 24px;
     }
 
     .scroll_up_arrow_container {
